@@ -282,6 +282,25 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+
+
+    @OnShowRationale(Manifest.permission.READ_CONTACTS)
+    void showRationaleForReadContact(final PermissionRequest request) {
+        Toast.makeText(this, "Do Something", Toast.LENGTH_SHORT).show();
+    }
+
+    @OnPermissionDenied(Manifest.permission.READ_CONTACTS)
+    void showDeniedForReadContact() {
+        Toast.makeText(this, "Permission Denied for Call", Toast.LENGTH_SHORT).show();
+    }
+
+    @OnNeverAskAgain(Manifest.permission.READ_CONTACTS)
+    void showNeverAskForReadContact() {
+        Toast.makeText(this, "Never Ask Called", Toast.LENGTH_SHORT).show();
+    }
+
+
+    @NeedsPermission(Manifest.permission.READ_CONTACTS)
     public void fetchContacts(final Context context) {
         Thread thread = new Thread(new Runnable() {
             @Override
