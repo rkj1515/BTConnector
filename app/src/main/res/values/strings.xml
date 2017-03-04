@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">BTConnector</string>
+    <string name="scan_error">Scanning error</string>
+    <string name="scan_title">Please Wait</string>
+    <string name="scan_text" />
+    <string name="SETTINGS_NO_DEVICE_FOUND">No Device Found</string>
+    <string name="SETTINGS_SELECT_DEVICE">Please Select Device</string>
+    <string name="scan_unknown_device">scan unkown device</string>
+    <string name="BLUETOOTH_NOT_SUPPORTED_ON_YOUR_DEVICE">Bluethooth Not Support</string>
+    <string name="text_bluetooth_off">OFF</string>
+    <string name="text_enable">Enable</string>
+    <string name="text_view_paired">View Paired Device</string>
+    <string name="text_scan_devices">Scan Device</string>
+    <string name="text_list_devices">List Devices</string>
+    <string name="text_pair">Pair</string>
+    <string name="action_settings">Settings</string>
+    <string name="record_audio_is_required">We will only use the Record Audio Permission in order to use the Speech to Text Feature</string>
+    <string name="start_listening">Start Recording</string>
+    <string name="stop_listening">Stop Listening</string>
+    <string name="no_results_found">No Matching Results</string>
+    <string name="mute">Mute</string>
+    <string name="un_mute">unMute</string>
+    <string name="destroied">SpeeechRecognizer has been destroyed</string>
+    <string name="you_may_speak">You may speak now</string>
 </resources>
