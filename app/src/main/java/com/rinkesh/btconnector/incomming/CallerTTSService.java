@@ -49,8 +49,8 @@ public class CallerTTSService extends Service implements TextToSpeech.OnInitList
                 if (Utils.isCallActive(getApplicationContext())) {
                     speak();
                 } else {
-                    audioManager.setStreamVolume(AudioManager.STREAM_RING, currentRingVolume, 0);
-                    audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentMusicVolume, 0);
+//                    audioManager.setStreamVolume(AudioManager.STREAM_RING, currentRingVolume, 0);
+//                    audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentMusicVolume, 0);
                     stopSelf();
                 }
             }
@@ -80,6 +80,8 @@ public class CallerTTSService extends Service implements TextToSpeech.OnInitList
             if (contactDetail != null) {
                 String name = contactDetail.name;
                 texts = name + " Calling Please answer";
+            } else {
+                texts = number;
             }
         }
 
@@ -119,14 +121,14 @@ public class CallerTTSService extends Service implements TextToSpeech.OnInitList
             return;
         }
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-        int ringVolume = audioManager.getStreamVolume(AudioManager.STREAM_RING);
-        int musicVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-        currentRingVolume = ringVolume;
-        currentMusicVolume = musicVolume;
-
-        if (ringVolume > 0) {
-            audioManager.setStreamVolume(AudioManager.STREAM_RING, 1, AudioManager.FLAG_PLAY_SOUND);
-        }
+//        int ringVolume = audioManager.getStreamVolume(AudioManager.STREAM_RING);
+//        int musicVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+//        currentRingVolume = ringVolume;
+//        currentMusicVolume = musicVolume;
+//
+//        if (ringVolume > 0) {
+//            audioManager.setStreamVolume(AudioManager.STREAM_RING, 1, AudioManager.FLAG_PLAY_SOUND);
+//        }
 
         audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC), 0);
 

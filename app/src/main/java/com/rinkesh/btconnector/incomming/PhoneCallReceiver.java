@@ -5,6 +5,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.AudioManager;
 import android.net.Uri;
 import android.provider.ContactsContract;
 import android.speech.tts.TextToSpeech;
@@ -20,6 +21,7 @@ public abstract class PhoneCallReceiver extends BroadcastReceiver {
     private boolean isIncoming;
     private Date callStartTime;
     private String savedNumber;
+    private AudioManager mAudioManager;
 //    private int lastState = TelephonyManager.CALL_STATE_IDLE;
 
     @Override
@@ -69,6 +71,8 @@ public abstract class PhoneCallReceiver extends BroadcastReceiver {
     }
 
     public void onCallStateChanged(Context context, int state, String number) {
+        mAudioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
+        mAudioManager.setStreamMute(AudioManager.STREAM_MUSIC, false);
         if (Utils.lastState == state) {
             //No change, debounce extras
             return;
